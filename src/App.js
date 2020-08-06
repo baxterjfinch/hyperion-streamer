@@ -1,16 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { withRouter } from "react-router";
 
-function App() {
-  console.log("Test")
-  return (
-    <div className="App">
-      <header className="App-header">
+class App extends Component {
+  componentDidMount(){
+    console.log("Mounted")
+  }
 
-      </header>
-    </div>
-  );
+  render() {
+    return (
+      <div>test</div>
+    )
+  }
 }
 
-export default App;
+export default (App);
