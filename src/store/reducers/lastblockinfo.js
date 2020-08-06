@@ -9,7 +9,7 @@ import { interval, of} from 'rxjs';
 import { switchMap, mapTo, map, takeUntil, catchError, delay, startWith, exhaustMap } from 'rxjs/operators';
 import { combineEpics, ofType } from 'redux-observable';
 
-// import apiRpc from 'services/api-rpc';
+import hyperionStreamer from 'services/hyperion-streamer';
 import { errorLog } from 'helpers/error-logger';
 
 // IMPORTANT
@@ -36,7 +36,7 @@ const pollingEpic = ( action$, state$ ) => action$.pipe(
     interval(process.env.REACT_APP_POLLING_INTERVAL_TIME).pipe(
       startWith(-1),
       exhaustMap(index => {
-        return apiRpc("get_info").pipe(
+        return hyperionStreamer().pipe(
           map(res => fetchFulfilled(res)),
           catchError(error => {
             errorLog("Info page/ get last irreversible block error",error);

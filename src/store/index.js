@@ -5,10 +5,10 @@ import { routerMiddleware } from 'connected-react-router'
 import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist'
 
-import { rootReducer, rootEpic } from 'reducers';
-
+import { rootReducer, rootEpic } from 'store/reducers';
 import reduxPersistConfig from './redux-persist-config';
 
+import configureStore from './configureStore'
 export const history = createBrowserHistory();
 
 const epicMiddleware = createEpicMiddleware();
@@ -37,7 +37,6 @@ const composedEnhancers = compose(
   applyMiddleware(...middleware),
   ...enhancers
 )
-
 const store = createStore(
   persistedReducer,
   initialState,
