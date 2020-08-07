@@ -41,7 +41,6 @@ const AppBundle = (
     <PersistGate loading={null} persistor={persistor}>
       <ConnectedRouter history={history}>
           <>
-            {console.log(store, persistor, history)}
             <App client={client}/>
             <div id="modal"></div>
           </>

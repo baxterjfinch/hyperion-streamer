@@ -4,7 +4,6 @@ import { Route, withRouter } from 'react-router-dom';
 class WillRoute extends Component {
 
   componentDidUpdate(prevProps){
-    
     //check if the location is changed
     if (this.props.location.pathname !== prevProps.location.pathname) {
       window.scrollTo(0, 0);
@@ -13,13 +12,13 @@ class WillRoute extends Component {
   }
 
   render() {
-      const { component: Component, ...restProps } = this.props;
+    const { component: Component, ...restProps } = this.props;
 
     return <Route
             {...restProps}
              render={
                props => (
-                  <Component key={this.props.location.pathname} { ...props}/>
+                  <Component key={this.props.location.pathname} client={this.props.client} { ...props}/>
                )
              }
            />;

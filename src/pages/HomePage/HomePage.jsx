@@ -1,21 +1,18 @@
 import { connect } from 'react-redux';
 import React, { Component } from "react";
-
 import {push} from "connected-react-router";
+
+import { Header } from "components";
 
 class HomePage extends Component {
 	constructor(props) {
 		super(props);
-
-
+		this.props = props;
 	}
-
-
-
   render() {
     return (
       <>
-				doop
+				<Header client={this.props.client} />
 			</>
     );
   }

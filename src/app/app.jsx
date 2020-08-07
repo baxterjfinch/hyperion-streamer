@@ -6,19 +6,24 @@ import { WillRoute } from "hocs";
 import HomePage from "pages/HomePage";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.client = props.client;
+  }
+
   componentWillMount() {
-    console.log("WILL MOUNT")
+    this.client.connect()
 
   }
   componentDidMount(){
-    console.log(this.props)
+    console.log(this.client)
   }
 
   render() {
     console.log("REDNERING HERE")
     return (
       <Switch>
-        <WillRoute exact path="/" component={HomePage} />
+        <WillRoute exact path="/" component={HomePage} client={this.client} />
         <Redirect to="/" />
       </Switch>
     )
