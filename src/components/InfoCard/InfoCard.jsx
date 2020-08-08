@@ -3,8 +3,6 @@ import { connect } from "react-redux";
 import { DGoodIssuanceNotifier } from "components";
 
 const InfoCard = (props) => {
-  console.log("HEADER PROPS", props)
-
 
   return (
     <>
