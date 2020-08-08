@@ -3,14 +3,9 @@ import { connect } from "react-redux";
 import { LIBBlock } from "components";
 
 const Header = (props) => {
-  console.log("HEADER PROPS", props)
-
   const [block, setBlock] = useState(null);
 
-  useEffect(()=>{
-
-
-  }, [])
+  useEffect(()=>{}, [])
 
   return (
     <>

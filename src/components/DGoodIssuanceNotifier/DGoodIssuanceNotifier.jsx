@@ -4,9 +4,7 @@ import { connect } from "react-redux";
 const DGoodIssuanceNotifier = (props) => {
   const [dgood, setDGood] = useState(null);
 
-  useEffect(()=>{
-
-  }, [])
+  useEffect(()=>{}, [])
 
   props.client.onData = async (data) => {
     console.log(data)
