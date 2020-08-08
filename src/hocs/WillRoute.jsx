@@ -15,13 +15,13 @@ class WillRoute extends Component {
     const { component: Component, ...restProps } = this.props;
 
     return <Route
-            {...restProps}
-             render={
-               props => (
-                  <Component key={this.props.location.pathname} client={this.props.client} { ...props}/>
-               )
-             }
-           />;
+      {...restProps}
+       render={
+         props => (
+            <Component key={this.props.location.pathname} client={this.props.client} { ...props}/>
+         )
+       }
+     />;
   }
 }
 
