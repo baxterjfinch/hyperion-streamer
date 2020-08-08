@@ -14,7 +14,6 @@ const HyperionSocketClient = require('@eosrio/hyperion-stream-client').default;
 const client = new HyperionSocketClient('http://127.0.0.1:7770', {async: false});
 client.onConnect = (data) => {
   console.log("connected")
-  console.log(process.env.ES_PASSWORD)
   // client.disconnect();
 }
 
