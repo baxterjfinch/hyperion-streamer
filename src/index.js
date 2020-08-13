@@ -11,10 +11,9 @@ import store, { history, persistor } from 'store'
 import App from 'app/index';
 
 const HyperionSocketClient = require('@eosrio/hyperion-stream-client').default;
-const client = new HyperionSocketClient('http://127.0.0.1:7770', {async: false});
+const client = new HyperionSocketClient('https://hyperion-api.dev.testnet.mythicalgames.co', {async: true});
 client.onConnect = (data) => {
-  console.log("connected")
-  // client.disconnect();
+  console.log(data)
 }
 
 const AppBundle = (

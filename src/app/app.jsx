@@ -13,14 +13,14 @@ class App extends Component {
 
   componentWillMount() {
     this.client.connect()
-
   }
   componentDidMount(){
+    console.log("App Mounted")
     console.log(this.client)
   }
 
   render() {
-    console.log("REDNERING HERE")
+
     return (
       <Switch>
         <WillRoute exact path="/" component={HomePage} client={this.client} />
